@@ -8,8 +8,8 @@ This was a project I built to explore how emotion recognition and music recommen
 
 ## Features
 
-- Upload your image to detect your mood
-- Get a playlist that matches how you're feeling
+- 📷 Upload your image to detect your mood
+- 🎵 Get a playlist that matches how you're feeling
 - Frontend built using React
 - Backend with Flask and Python
 - Uses Spotify API for music data
@@ -28,10 +28,10 @@ This was a project I built to explore how emotion recognition and music recommen
 
 ## How it Works (Short Overview)
 
-1. User uploads a photo from the browser.
+1. User 📷uploads a photo from the browser.
 2. The photo is sent to the backend (Flask server).
-3. A pre-trained model predicts the emotion (like happy, sad, angry, etc.).
-4. Based on the result, the server queries the Spotify API for songs related to that mood.
+3. A pre-trained model predicts🧠 the emotion (like happy, sad, angry, etc.).
+4. Based on the result, the server queries the 🎵 Spotify API for songs related to that mood.
 5. The frontend receives the playlist and displays it to the user.
 
 ---
