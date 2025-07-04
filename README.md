@@ -21,7 +21,7 @@ This was a project I built to explore how emotion recognition and music recommen
 
 - **Frontend:** React, HTML/CSS
 - **Backend:** Flask (Python)
-- **ML Model:** Trained using Python libraries (like OpenCV, Keras, etc.)
+- **ML Model:** DeepFace
 - **Music API:** Spotify Web API
 
 ---
@@ -30,7 +30,7 @@ This was a project I built to explore how emotion recognition and music recommen
 
 1. User 📷uploads a photo from the browser.
 2. The photo is sent to the backend (Flask server).
-3. A pre-trained model predicts🧠 the emotion (like happy, sad, angry, etc.).
+3. A pre-trained model(DeepFace) predicts🧠 the emotion (like happy, sad, angry, etc.).
 4. Based on the result, the server queries the 🎵 Spotify API for songs related to that mood.
 5. The frontend receives the playlist and displays it to the user.
 
