@@ -16,12 +16,11 @@ function Home() {
       formData.append('image', image);
 
       try {
-        const res = await fetch('https://moodify-zlx5.onrender.com/predict-and-recommend', {
+        const res = await fetch('http://127.0.0.1:5000/predict-and-recommend', {
           method: 'POST',
           body: formData
         });
-        const data = await res.json();
-
+        const data = await res.json()
         console.log('Received from backend:', data);
         setPlaylistData(data);
       } catch (err) {
