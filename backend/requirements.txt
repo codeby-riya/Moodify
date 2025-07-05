@@ -3,3 +3,4 @@ flask-cors==3.0.10
 deepface==0.0.83
 requests
 spotipy
+tf-keras
