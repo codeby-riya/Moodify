@@ -1,22 +1,20 @@
-from deepface import DeepFace
-from deepface.basemodels import Emotion
-from keras.models import load_model
-import os
+import numpy as np
+import cv2
+from tensorflow.keras.models import load_model
+from deepface.commons import functions
 
-# Load the Emotion model architecture
-emotion_model = Emotion.loadModel()
+# Load the model from your local file — do this ONCE
+emotion_model_path = "models/facial_expression_model_weights.h5"
+emotion_model = load_model(emotion_model_path)
 
-# Load pre-downloaded weights from local file
-model_path = os.path.join("models", "facial_expression_model_weights.h5")
-emotion_model.load_weights(model_path)
+# Emotion labels used by the model
+emotion_labels = ['angry', 'disgust', 'fear', 'happy', 'sad', 'surprise', 'neutral']
 
-# Function to predict emotion using the local model
 def detect_emotion(image_path):
-    analysis = DeepFace.analyze(
-        img_path=image_path,
-        actions=['emotion'],
-        enforce_detection=False,
-        models={"emotion": emotion_model}  # Use our locally loaded model
-    )
-    mood = analysis[0]['dominant_emotion'].lower()
-    return mood
+    # Preprocess the image as DeepFace does
+    img = functions.preprocess_face(img=image_path, target_size=(48, 48), grayscale=True, enforce_detection=False)
+    
+    preds = emotion_model.predict(img)[0]
+    dominant_emotion = emotion_labels[np.argmax(preds)]
+    
+    return dominant_emotion.lower()
