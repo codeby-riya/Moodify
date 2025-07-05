@@ -1,6 +1,6 @@
-Flask==2.3.2
-flask-cors==3.0.10
+flask
+flask-cors
 deepface==0.0.83
-requests
-spotipy
-tf-keras
+tensorflow==2.11.0
+opencv-python-headless
+gdown
