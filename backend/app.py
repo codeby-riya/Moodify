@@ -4,7 +4,7 @@ from routes.combined_route import combined_bp
 import os
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, origins=["https://moodify-jet.vercel.app"], supports_credentials=True)
 app.register_blueprint(combined_bp)
 
 if __name__ == '__main__':
